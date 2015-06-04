@@ -1,0 +1,18 @@
+{
+  "name": "csv-performance-tests",
+  "version": "1.0.0",
+  "description": "there are a bunch of CSV parsers, so this is an attempt to compare them",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "author": "Sean Lang <slang800@gmail.com>",
+  "license": "WTFPL",
+  "dependencies": {
+    "JSONStream": "^1.0.4",
+    "binary-csv": "^0.2.3",
+    "csv-parser": "^1.6.0",
+    "csvtojson": "^0.3.21",
+    "fast-csv": "^0.6.0"
+  }
+}
