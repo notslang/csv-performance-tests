@@ -13,6 +13,9 @@ time node test-csv-parse.js
 printf '\n# csv-parser\n'
 time node test-csv-parser.js
 
+printf '\n# csv-stream\n'
+time node test-csv-stream.js
+
 printf '\n# csvtojson\n'
 time node test-csvtojson.js
 

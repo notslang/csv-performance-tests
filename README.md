@@ -10,64 +10,75 @@ Here's what I get from running this on my own machine:
 
 package                                             | time (lower is better)
 --------------------------------------------------- | ----------------------
-[csv-parser](https://npmjs.com/packages/csv-parser) | 5.974s
-[csv-parse](https://npmjs.com/package/csv-parse)    | 9.418s
-[fast-csv](https://npmjs.com/packages/fast-csv)     | 10.016s
-[csvtojson](https://npmjs.com/packages/csvtojson)   | 12.904s
-[binary-csv](https://npmjs.com/packages/binary-csv) | 13.149s
+[csv-parser](https://npmjs.com/package/csv-parser) | 6.201s
+[csv-stream](https://npmjs.com/package/csv-stream) | 8.218s
+[csv-parse](https://npmjs.com/package/csv-parse)    | 9.778s
+[fast-csv](https://npmjs.com/package/fast-csv)     | 10.484s
+[csvtojson](https://npmjs.com/package/csvtojson)   | 13.120s
+[binary-csv](https://npmjs.com/package/binary-csv) | 13.832s
 
 raw output:
 
 ```
 # binary-csv
-basic requires: 5ms
-require lib: 14ms
-process csv: 13037ms
+basic requires: 4ms
+require lib: 13ms
+process csv: 13711ms
 
-real	0m13.149s
-user	0m11.456s
-sys	0m2.564s
+real	0m13.832s
+user	0m12.212s
+sys	0m2.620s
 
 # csv-parse
-basic requires: 5ms
-require lib: 2ms
-process csv: 9314ms
+basic requires: 4ms
+require lib: 1ms
+process csv: 9668ms
 
-real	0m9.418s
-user	0m7.768s
-sys	0m2.516s
+real	0m9.778s
+user	0m7.884s
+sys	0m2.744s
 
 # csv-parser
 basic requires: 4ms
-require lib: 3ms
-process csv: 5868ms
+require lib: 4ms
+process csv: 6091ms
 
-real	0m5.974s
-user	0m4.352s
-sys	0m2.476s
+real	0m6.201s
+user	0m4.192s
+sys	0m2.832s
+
+# csv-stream
+basic requires: 4ms
+require lib: 2ms
+process csv: 8111ms
+
+real	0m8.218s
+user	0m6.480s
+sys	0m2.484s
 
 # csvtojson
 basic requires: 4ms
-require lib: 16ms
-process csv: 9172ms
+require lib: 17ms
+process csv: 9082ms
 
-real	0m12.904s
-user	0m11.440s
-sys	0m2.360s
+real	0m13.120s
+user	0m11.284s
+sys	0m2.732s
 
 # fast-csv
 basic requires: 4ms
 require lib: 50ms
-process csv: 9863ms
+process csv: 10330ms
 
-real	0m10.016s
-user	0m8.616s
-sys	0m2.432s
+real	0m10.484s
+user	0m8.828s
+sys	0m2.664s
 
 sha sums to ensure all the resulting files are the same:
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/binary-csv.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-parse.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-parser.json
+e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-stream.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csvtojson.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/fast-csv.json
 ```
