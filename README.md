@@ -71,3 +71,11 @@ e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-parser.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csvtojson.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/fast-csv.json
 ```
+
+## Other Libs That Weren't Even Worth Installing
+- [basic-csv](https://www.npmjs.com/package/basic-csv): From the docs, it states that it only transforms CSVs into an array of arrays, so it can't even match the format that the other CSV parsers output. Also, the fact that it uses a callback API, rather than a stream means I need to load the whole file into memory at once, which is idiotic. Also, it doesn't seem to accept anything other than a file, which means it's useless for data coming from a server or another process.
+- [magic-csv](https://www.npmjs.com/package/magic-csv): Exposes a partly stream-based API, but internally it's all callback-based and requires the whole file to be loaded into memory. Also, it doesn't seem to accept a stream as an input.
+- [csv-array](https://www.npmjs.com/package/csv-array): Uses streams internally, but only has a callback API. Also, it doesn't seem to accept anything other than a file as an input, which means it's useless for data coming from or going to a server or another process.
+- [dank-csv](https://www.npmjs.com/package/dank-csv): It uses a synchronous API, regexp-based parsing, and was last updated in 2013. Thankfully, nobody seems to be using it.
+- [yi-csv](https://www.npmjs.com/package/yi-csv): It isn't a streaming API - it just reads the file asynchronously and then emits the parsed CSV in the `end` event. Thus, it doesn't support piping and needs to read the whole file into memory at once.
+- [rfc-csv](https://www.npmjs.com/package/rfc-csv): Only outputs arrays of strings, not Objects with keys.
