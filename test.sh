@@ -7,6 +7,9 @@ mkdir -p tmp/
 printf '# binary-csv\n'
 time node test-binary-csv.js
 
+printf '\n# csv-parse\n'
+time node test-csv-parse.js
+
 printf '\n# csv-parser\n'
 time node test-csv-parser.js
 

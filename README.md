@@ -10,52 +10,63 @@ Here's what I get from running this on my own machine:
 
 package                                             | time (lower is better)
 --------------------------------------------------- | ----------------------
-[csv-parser](https://npmjs.com/packages/csv-parser) | 5.573s
-[fast-csv](https://npmjs.com/packages/fast-csv)     | 9.684s
-[binary-csv](https://npmjs.com/packages/binary-csv) | 13.189s
-[csvtojson](https://npmjs.com/packages/csvtojson)   | 13.246s
+[csv-parser](https://npmjs.com/packages/csv-parser) | 5.974s
+[csv-parse](https://npmjs.com/package/csv-parse)    | 9.418s
+[fast-csv](https://npmjs.com/packages/fast-csv)     | 10.016s
+[csvtojson](https://npmjs.com/packages/csvtojson)   | 12.904s
+[binary-csv](https://npmjs.com/packages/binary-csv) | 13.149s
 
 raw output:
 
 ```
 # binary-csv
-basic requires: 4ms
-require lib: 15ms
-process csv: 12846ms
+basic requires: 5ms
+require lib: 14ms
+process csv: 13037ms
 
-real    0m13.189s
-user    0m11.720s
-sys    0m2.200s
+real	0m13.149s
+user	0m11.456s
+sys	0m2.564s
+
+# csv-parse
+basic requires: 5ms
+require lib: 2ms
+process csv: 9314ms
+
+real	0m9.418s
+user	0m7.768s
+sys	0m2.516s
 
 # csv-parser
 basic requires: 4ms
-require lib: 4ms
-process csv: 5467ms
+require lib: 3ms
+process csv: 5868ms
 
-real    0m5.573s
-user    0m4.132s
-sys    0m2.208s
+real	0m5.974s
+user	0m4.352s
+sys	0m2.476s
 
 # csvtojson
-basic requires: 5ms
-require lib: 18ms
-process csv: 9726ms
+basic requires: 4ms
+require lib: 16ms
+process csv: 9172ms
 
-real    0m13.246s
-user    0m11.852s
-sys    0m2.248s
+real	0m12.904s
+user	0m11.440s
+sys	0m2.360s
 
 # fast-csv
-basic requires: 5ms
-require lib: 51ms
-process csv: 9522ms
+basic requires: 4ms
+require lib: 50ms
+process csv: 9863ms
 
-real    0m9.684s
-user    0m8.436s
-sys    0m2.212s
+real	0m10.016s
+user	0m8.616s
+sys	0m2.432s
 
 sha sums to ensure all the resulting files are the same:
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/binary-csv.json
+e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-parse.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csv-parser.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/csvtojson.json
 e866e9e2eaa523fa7020d7aa7f205a57402aa631  tmp/fast-csv.json
